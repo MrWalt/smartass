@@ -1,0 +1,40 @@
+.header {
+  max-width: 75%;
+  font-size: 6.4rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 15.6rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid #fff;
+}
+
+.cta {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -2px;
+
+  &Box {
+    border-radius: 8px;
+    transform: skewX(-12deg);
+    padding: 0 1.2rem;
+    display: inline-block;
+    background-color: #6a994e;
+  }
+
+  &Text {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #fff;
+  }
+
+  &Container {
+    max-width: 120rem;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+  }
+}

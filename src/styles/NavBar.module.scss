@@ -1,0 +1,35 @@
+.navbar {
+  padding: 1.8rem 3.2rem;
+  border-radius: 18px;
+  background-color: rgba(134, 142, 150, 0.1);
+
+  display: flex;
+  justify-content: space-between;
+
+  & ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    letter-spacing: -1.2px;
+    gap: 0.8rem;
+  }
+
+  & a:link,
+  & a:visited {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    display: inline-block;
+    padding: 0.4rem 1.8rem;
+  }
+
+  & ul li a:global(.active) {
+    background-color: #6a994e;
+    border-radius: 8px;
+  }
+}
