@@ -1,0 +1,27 @@
+.loader {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  background: conic-gradient(#fff 10%, #999);
+  /* eslint-disable */
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #ffffff00 calc(100% - 8px),
+    #fff 0
+  );
+  mask: radial-gradient(farthest-side, #ffffff00 calc(100% - 8px), #fff 0);
+  animation: rotate 1.5s infinite linear;
+
+  &Container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}

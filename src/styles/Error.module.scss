@@ -1,0 +1,11 @@
+.error {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: #fff;
+
+  &Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,13 +1,28 @@
+import { useQuestions } from "../contexts/QuestionsContext";
+import Button from "../components/Button";
 import NavBar from "../components/NavBar";
-import Question from "../components/Question";
+import Quiz from "../components/Quiz";
 import StartQuiz from "../components/StartQuiz";
 
 export default function Trivia() {
+  const { status, dispatch } = useQuestions();
+
   return (
     <>
       <NavBar />
-      <StartQuiz />
-      {/* <Question /> */}
+      {status !== "active" ? (
+        <StartQuiz />
+      ) : (
+        <>
+          <Quiz />
+          <Button
+            className="btnQuit"
+            onClick={() => dispatch({ type: "exitGame" })}
+          >
+            Exit
+          </Button>
+        </>
+      )}
     </>
   );
 }

@@ -1,3 +1,9 @@
+import styles from "../styles/Loader.module.scss";
+
 export default function Loader() {
-  return <span>Loading...</span>;
+  return (
+    <div className={styles.loaderContainer}>
+      <div className={styles.loader}></div>
+    </div>
+  );
 }

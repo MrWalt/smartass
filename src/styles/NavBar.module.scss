@@ -1,10 +1,13 @@
 .navbar {
-  padding: 1.8rem 3.2rem;
-  border-radius: 18px;
-  background-color: rgba(134, 142, 150, 0.1);
+  // padding: 1.8rem 3.2rem 3.2rem 3.2rem;
+  padding: 2.8rem 6.4rem 2.8rem 6.4rem;
+  border-radius: 0 0 32px 32px;
+  background-color: #444;
 
   display: flex;
   justify-content: space-between;
+
+  box-shadow: 0 0 4px 8px rgba(0, 0, 0, 0.055);
 
   & ul {
     list-style: none;
@@ -26,6 +29,12 @@
 
     display: inline-block;
     padding: 0.4rem 1.8rem;
+
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-6px);
+    }
   }
 
   & ul li a:global(.active) {
