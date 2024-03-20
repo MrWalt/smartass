@@ -9,7 +9,7 @@ const initialState = {
   category: "25",
   numQuestions: 15,
   index: 0,
-  // ready, active, starting, loading, error
+  // ready, active, starting, loading, error, finished
   status: "ready",
   error: "",
   currentAnswer: "",
@@ -45,8 +45,13 @@ function reducer(state, action) {
       if (state.currentAnswer === "") return { ...state };
       return {
         ...state,
-        index: state.index + 1,
+        index:
+          state.index !== state.numQuestions - 1
+            ? state.index + 1
+            : state.index,
         currentAnswer: "",
+        status:
+          state.index === state.numQuestions - 1 ? "finished" : state.status,
       };
 
     case "setError":
@@ -83,6 +88,8 @@ function QuestionsProvider({ children }) {
       async function fetchTrivia() {
         try {
           dispatch({ type: "setStatus", payload: "loading" });
+          if (numQuestions === "0") throw new Error();
+
           const res = await fetch(
             `${BASE_URL}?amount=${numQuestions}&category=${category}` // &type=multiple
           );

@@ -3,6 +3,9 @@ import Button from "../components/Button";
 import NavBar from "../components/NavBar";
 import Quiz from "../components/Quiz";
 import StartQuiz from "../components/StartQuiz";
+import QuizResults from "../components/QuizResults";
+import Error from "../components/Error";
+import Loader from "../components/Loader";
 
 export default function Trivia() {
   const { status, dispatch } = useQuestions();
@@ -10,9 +13,8 @@ export default function Trivia() {
   return (
     <>
       <NavBar />
-      {status !== "active" ? (
-        <StartQuiz />
-      ) : (
+      {status === "ready" && <StartQuiz />}
+      {status === "active" && (
         <>
           <Quiz />
           <Button
@@ -23,6 +25,9 @@ export default function Trivia() {
           </Button>
         </>
       )}
+      {status === "finished" && <QuizResults />}
+      {status === "loading" && <Loader />}
+      {status === "error" && <Error />}
     </>
   );
 }

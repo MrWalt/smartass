@@ -1,11 +1,9 @@
 import styles from "../styles/StartQuiz.module.scss";
 import { useQuestions } from "../contexts/QuestionsContext";
-import Loader from "./Loader";
-import Error from "./Error";
 import Button from "./Button";
 
 export default function StartQuiz() {
-  const { status, category, numQuestions, dispatch } = useQuestions();
+  const { category, numQuestions, dispatch } = useQuestions();
 
   return (
     <>
@@ -21,12 +19,18 @@ export default function StartQuiz() {
           >
             <option value="25">Art</option>
             <option value="27">Animals</option>
+            <option value="10">Books</option>
+            <option value="18">Computers</option>
             <option value="26">Celebrities</option>
-            <option value="17">Science and Nature</option>
             <option value="11">Film</option>
+            <option value="9">General</option>
             <option value="22">Geography</option>
+            <option value="23">History</option>
             <option value="12">Music</option>
             <option value="20">Mythology</option>
+            <option value="21">Sports</option>
+            <option value="17">Science and Nature</option>
+            <option value="28">Vehicles</option>
             <option value="15">Video Games</option>
           </select>
         </div>
@@ -49,8 +53,6 @@ export default function StartQuiz() {
           Start
         </Button>
       </div>
-      {status === "loading" && <Loader />}
-      {status === "error" && <Error />}
     </>
   );
 }

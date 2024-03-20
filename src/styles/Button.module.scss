@@ -68,3 +68,27 @@
     color: #fff;
   }
 }
+
+.btnPlayAgain {
+  background-color: #6a994e;
+  border: none;
+  border-radius: 12px;
+
+  padding: 1.4rem 6.4rem;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: transparent;
+    box-shadow: 0 0 0 2px inset #6a994e;
+    color: #6a994e;
+  }
+}
