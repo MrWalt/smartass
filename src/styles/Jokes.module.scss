@@ -9,7 +9,7 @@
 
   &Container {
     margin-top: 6.4rem;
-    padding: 4.8rem 6.4rem;
+    padding: 4.8rem 4.8rem;
     width: 64rem;
     border-radius: 12px;
 
@@ -20,6 +20,7 @@
     border: 2px solid #6a994e;
 
     position: relative;
+    box-shadow: 0 0 4px 8px rgba(0, 0, 0, 0.07);
   }
 }
 
@@ -33,7 +34,7 @@
       width: 48rem;
       transition: all 0.3s;
 
-      padding: 4.8rem 6.4rem;
+      padding: 3.6rem 6.4rem;
       border-radius: 0 0 12px 12px;
       border-bottom: 2px solid #6a994e;
       border-left: 2px solid #6a994e;

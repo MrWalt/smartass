@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 
 const JokesContext = createContext();
 const BASE_URL = "https://v2.jokeapi.dev/joke/";
+const CHUCK_BASE_URL = "https://api.chucknorris.io/jokes/random";
 
 const initialState = {
   joke: "",
@@ -9,6 +10,7 @@ const initialState = {
   jokeParams: "Any",
   status: "ready",
   showDelivery: false,
+  type: "",
 };
 
 function reducer(state, action) {
@@ -40,17 +42,25 @@ function JokesProvider({ children }) {
         dispatch({ type: "setStatus", payload: "loading" });
         const res = await fetch(`${BASE_URL}${jokeParams}`);
         const data = await res.json();
-        console.log(data);
         dispatch({ type: "setJoke", payload: data });
         dispatch({ type: "requestJoke", payload: false });
         dispatch({ type: "setStatus", payload: "ready" });
       }
-      if (requestJoke && jokeParams !== "ChuckNorris") fetchJoke();
-      if (jokeParams === "ChuckNorris" && requestJoke)
+
+      async function fetchChuckNorrisJoke() {
+        dispatch({ type: "setStatus", payload: "loading" });
+        const res = await fetch(CHUCK_BASE_URL);
+        const data = await res.json();
+        dispatch({ type: "setJoke", payload: data.value });
         dispatch({ type: "requestJoke", payload: false });
+        dispatch({ type: "setStatus", payload: "ready" });
+      }
+      if (requestJoke && jokeParams !== "ChuckNorris") fetchJoke();
+      if (jokeParams === "ChuckNorris") fetchChuckNorrisJoke();
     },
     [requestJoke]
   );
+
   return (
     <JokesContext.Provider value={{ joke, status, showDelivery, dispatch }}>
       {children}

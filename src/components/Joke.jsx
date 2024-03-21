@@ -19,6 +19,7 @@ export default function Joke() {
       ) : (
         <h1 className={styles.joke}>{joke.joke}</h1>
       )}
+      {joke.type === undefined && <h1 className={styles.joke}>{joke}</h1>}
     </>
   );
 }
