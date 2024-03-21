@@ -8,8 +8,8 @@ export default function QuizResults() {
   return (
     <div className={styles.summaryContainer}>
       <h2 className={styles.summary}>
-        You scored <span className={styles.points}>{points}</span> out of{" "}
-        <span className={styles.points}>100</span> points!
+        You scored <span className={styles.points}>{Math.floor(points)}</span>{" "}
+        out of <span className={styles.points}>100</span> points!
       </h2>
       <div className={styles.btnContainer}>
         <Link to="/">

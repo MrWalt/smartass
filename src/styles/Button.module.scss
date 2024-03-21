@@ -92,3 +92,33 @@
     color: #6a994e;
   }
 }
+
+.btnGetJoke {
+  border: none;
+  border-radius: 12px;
+  background-color: #6a994e;
+
+  padding: 1.4rem 3.2rem;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:hover {
+    background-color: #444;
+    box-shadow: 0 0 0 2px inset #6a994e;
+    color: #6a994e;
+  }
+}

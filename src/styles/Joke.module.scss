@@ -1,0 +1,30 @@
+.joke {
+  font-size: 2.4rem;
+}
+
+.btnDelivery {
+  border: none;
+  border-radius: 50%;
+  background-color: #6a994e;
+  width: 5.6rem;
+  height: 5.6rem;
+
+  font-size: 3.2rem;
+  color: #fff;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #444;
+    box-shadow: 0 0 0 2px inset #6a994e;
+    color: #6a994e;
+  }
+}

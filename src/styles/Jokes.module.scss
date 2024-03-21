@@ -1,0 +1,54 @@
+.jokes {
+  width: 92rem;
+  margin: 6.4rem auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &Container {
+    margin-top: 6.4rem;
+    padding: 4.8rem 6.4rem;
+    width: 64rem;
+    border-radius: 12px;
+
+    text-align: center;
+    color: #fff;
+
+    background-color: #444;
+    border: 2px solid #6a994e;
+
+    position: relative;
+  }
+}
+
+.joke {
+  &Delivery {
+    font-size: 2rem;
+    color: #fff;
+
+    &Container {
+      background-color: #444;
+      width: 48rem;
+      transition: all 0.3s;
+
+      padding: 4.8rem 6.4rem;
+      border-radius: 0 0 12px 12px;
+      border-bottom: 2px solid #6a994e;
+      border-left: 2px solid #6a994e;
+      border-right: 2px solid #6a994e;
+
+      z-index: -1;
+      transform: translateY(-100%);
+      opacity: 0;
+
+      text-align: center;
+    }
+  }
+}
+
+.jokeDeliveryContainer:global(.show) {
+  transform: translateY(0);
+  opacity: 1;
+}
