@@ -5,7 +5,7 @@ import { JokesProvider } from "./contexts/JokesContext";
 import Homepage from "./pages/Homepage";
 import Trivia from "./pages/Trivia";
 import Jokes from "./pages/Jokes";
-import Facts from "./pages/Facts";
+import Advice from "./pages/Advice";
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="trivia" element={<Trivia />} />
             <Route path="jokes" element={<Jokes />} />
-            <Route path="facts" element={<Facts />} />
+            <Route path="advice" element={<Advice />} />
           </Routes>
         </BrowserRouter>
       </JokesProvider>

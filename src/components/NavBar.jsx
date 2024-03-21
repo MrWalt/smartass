@@ -14,7 +14,7 @@ export default function NavBar() {
           <NavLink to="/jokes">Jokes</NavLink>
         </li>
         <li>
-          <NavLink to="/facts">Facts</NavLink>
+          <NavLink to="/advice">Advice</NavLink>
         </li>
       </ul>
     </nav>
