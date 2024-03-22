@@ -12,7 +12,7 @@
 
 html {
   font-size: 62.5%;
-  overflow: hidden;
+  overflow-x: hidden;
 
   @include respond(tab-landscape) {
     font-size: 56.5%;
