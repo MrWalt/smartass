@@ -1,3 +1,5 @@
+@import "mixins";
+
 .game {
   display: flex;
   justify-content: center;
@@ -5,8 +7,13 @@
   flex-direction: column;
   gap: 4.8rem;
 
-  width: 140rem;
+  max-width: 140rem;
   margin: 9.2rem auto;
+
+  @include respond(phone) {
+    padding: 2.4rem;
+    margin: 0 auto;
+  }
 }
 
 .question {
@@ -30,6 +37,17 @@
     position: absolute;
     top: -14px;
     left: 16px;
+
+    @include respond(phone) {
+      transform: rotate(90deg) translate(-450%, 0);
+      top: 50%;
+      left: 50%;
+    }
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+    padding: 1.8rem 3.2rem;
   }
 }
 
@@ -37,6 +55,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   gap: 1.8rem;
 }
 
@@ -56,6 +75,10 @@
   &:hover {
     transform: translateX(16px);
     box-shadow: 0 0 0 2px inset #6a994e;
+  }
+
+  @include respond(phone) {
+    width: 24rem;
   }
 }
 
@@ -104,6 +127,7 @@
     flex-direction: column;
     padding: 2.4rem 1.2rem;
     border-radius: 12px;
+    height: 12.8rem;
 
     color: #fff;
     text-align: center;
@@ -113,6 +137,13 @@
     right: 0;
     top: 0;
     transform: translate(150%, 50%);
+
+    @include respond(phone) {
+      // flex-direction: row;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
   }
 
   &Max {

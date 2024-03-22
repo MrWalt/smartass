@@ -1,3 +1,5 @@
+@import "mixins";
+
 .summary {
   font-size: 3.2rem;
   color: #fff;
@@ -5,7 +7,7 @@
   margin-bottom: 3.2rem;
 
   &Container {
-    width: 92rem;
+    max-width: 92rem;
     margin: 6.4rem auto;
 
     display: flex;
@@ -13,6 +15,11 @@
     justify-content: center;
     align-items: center;
     gap: 1.2rem;
+
+    @include respond(phone) {
+      text-align: center;
+      padding: 2.4rem;
+    }
   }
 }
 

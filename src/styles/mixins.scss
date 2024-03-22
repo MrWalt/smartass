@@ -1,0 +1,19 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == tab-landscape {
+    @media only screen and (max-width: 58em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-portrait {
+    @media only screen and (max-width: 40em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 30em) {
+      @content;
+    }
+  }
+}

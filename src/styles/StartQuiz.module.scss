@@ -1,11 +1,22 @@
+@import "mixins";
+
 .settings {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2.4rem;
 
-  width: 90rem;
+  max-width: 100%;
   margin: 4.8rem auto;
+
+  @include respond(tab-landscape) {
+    max-width: 100%;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .category {
