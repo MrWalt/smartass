@@ -50,27 +50,29 @@ export default function AdviceSlip() {
   }
 
   return (
-    <div className={styles.adviceContainer}>
-      {advice && !isLoading ? (
-        <h1 className={styles.advice}>{advice.advice}</h1>
-      ) : (
-        ""
-      )}
-      {isLoading && <Loader />}
-      {!advice && !isLoading ? (
-        <h1 className={styles.advice}>
-          Click the button to get some random piece of advice
-        </h1>
-      ) : (
-        ""
-      )}
-      <button
-        ref={button}
-        className={styles.button}
-        onClick={() => handleGetAdvice()}
-      >
-        Get Advice
-      </button>
+    <div className={styles.adviceBox}>
+      <div className={styles.adviceContainer}>
+        {advice && !isLoading ? (
+          <h1 className={styles.advice}>{advice.advice}</h1>
+        ) : (
+          ""
+        )}
+        {isLoading && <Loader />}
+        {!advice && !isLoading ? (
+          <h1 className={styles.advice}>
+            Click the button to get some random piece of advice
+          </h1>
+        ) : (
+          ""
+        )}
+        <button
+          ref={button}
+          className={styles.button}
+          onClick={() => handleGetAdvice()}
+        >
+          Get Advice
+        </button>
+      </div>
     </div>
   );
 }
