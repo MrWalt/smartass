@@ -28,6 +28,10 @@
 
   position: relative;
 
+  @include respond(phone) {
+    border: 2px solid #6a994e;
+  }
+
   &::before {
     content: ">";
 
@@ -39,15 +43,13 @@
     left: 16px;
 
     @include respond(phone) {
-      transform: rotate(90deg) translate(-450%, 0);
-      top: 50%;
-      left: 50%;
+      display: none;
     }
   }
 
   @include respond(phone) {
     font-size: 2rem;
-    padding: 1.8rem 3.2rem;
+    padding: 1.8rem 2.4rem;
   }
 }
 
